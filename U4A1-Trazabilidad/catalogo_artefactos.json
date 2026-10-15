@@ -9,7 +9,7 @@
    "tipo": "Product Backlog (18 ítems)",
    "rutas": [
     "Backlog/Product_backlog.html",
-    "Backlog/Product_backlog_ReqView.csv"
+    "Backlog/Product_backlog.reqw"
    ],
    "version": "1.0",
    "estado_final": "Aprobado, 1 iteración",
@@ -21,7 +21,7 @@
     "TRI-PRO-003",
     "TRI-MTZ-007"
    ],
-   "descripcion": "Historias de usuario y restricciones con criterios de aceptación Dado/Cuando/Entonces."
+   "descripcion": "Historias de usuario y restricciones con criterios de aceptación Dado/Cuando/Entonces. Fuente: archivo de ReqView (.reqw)."
   },
   {
    "id": "TRI-RFC-002",

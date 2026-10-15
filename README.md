@@ -9,7 +9,7 @@ Cada artefacto lleva sus metadatos: ID único, versión, estado final, autor o r
 <!-- METADATOS:INICIO -->
 | ID | Artefacto | Tipo | Versión | Estado final | Autor o revisor | Fecha de cierre | Artefactos relacionados |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| TRI-PBL-001 | [Product_backlog.html](Backlog/Product_backlog.html) · [Product_backlog_ReqView.csv](Backlog/Product_backlog_ReqView.csv) | Product Backlog (18 ítems) | 1.0 | Aprobado, 1 iteración | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-RFC-002, TRI-PRO-003, TRI-MTZ-007 |
+| TRI-PBL-001 | [Product_backlog.html](Backlog/Product_backlog.html) · [Product_backlog.reqw](Backlog/Product_backlog.reqw) | Product Backlog (18 ítems) | 1.0 | Aprobado, 1 iteración | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-RFC-002, TRI-PRO-003, TRI-MTZ-007 |
 | TRI-RFC-002 | [RFC_Solicitudes_de_Cambio.pdf](U3A1-RFC/RFC_Solicitudes_de_Cambio.pdf) · [RFC_Solicitudes_de_Cambio.docx](U3A1-RFC/RFC_Solicitudes_de_Cambio.docx) | RFC (10 solicitudes) | 1.0 | Entregado, 1 iteración. Decisiones tomadas en TRI-CCB-006 | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-PBL-001, TRI-CCB-006, TRI-DOC-005 |
 | TRI-PRO-003 | [index.html](U3A2-Prototipado/prototipo/index.html) | Prototipo (HTML) | 0.2 | Validado con 30 pruebas automáticas; 7 defectos abiertos (DEF-01, DEF-06 a DEF-11) | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-PBL-001, TRI-PRU-004, TRI-DOC-005, TRI-MTZ-007 |
 | TRI-PRU-004 | [test_prototipo.py](U3A2-Prototipado/pruebas/test_prototipo.py) · [resultados_pruebas.json](U3A2-Prototipado/pruebas/resultados_pruebas.json) (+5) | Casos de prueba automatizados | 1.0 | 30 de 30 aprobadas | Federico Márquez (autor); revisor: Pendiente (docente) | 14/10/2026 | TRI-PRO-003, TRI-PBL-001, TRI-MTZ-007 |
@@ -132,7 +132,7 @@ Cada tarea del curso tiene su carpeta. Los artefactos de una tarea están dentro
 
 | Carpeta | Tarea | Contenido |
 | --- | --- | --- |
-| [Backlog/](Backlog/) | Product Backlog | Backlog de 18 ítems en HTML y en CSV de ReqView |
+| [Backlog/](Backlog/) | Product Backlog | Backlog de 18 ítems: archivo de ReqView (`.reqw`, fuente) y vista en HTML |
 | [U3A1-RFC/](U3A1-RFC/) | U3A1 · Solicitudes de cambio (RFC) | Las 10 RFC en PDF y Word |
 | [U3A2-Prototipado/](U3A2-Prototipado/) | U3A2 · Prototipado y CCB | Informe, `prototipo/` (baja fidelidad, HU-04 a HU-08, RNF-01, RNF-02 y RNF-06), `pruebas/` (30 de 30 aprobadas, resultados y capturas) y `trazabilidad/` (decisiones del CCB y matriz de los cambios aprobados) |
 | [U4A1-Trazabilidad/](U4A1-Trazabilidad/) | U4A1 · Trazabilidad de un requisito | Informe, herramienta, catálogo de metadatos, matriz en Excel y auditoría |

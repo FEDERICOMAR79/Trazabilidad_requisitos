@@ -1,0 +1,615 @@
+{
+  "id": "1",
+  "description": "backlog_ingenieria_requisitos",
+  "documents": [
+    {
+      "id": "1",
+      "guid": "689c585d-c15b-4843-945b-5c51cdd4e124",
+      "name": "backlog_ingenieria_requisitos",
+      "lastId": 1,
+      "createdOn": "2026-07-28T04:59:08.752Z",
+      "createdBy": {
+        "name": "FEDERICO MARQUEZ",
+        "email": "federmarquezcalle@gmail.com",
+        "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+      },
+      "lastChangedOn": "2026-07-28T04:59:13.973Z",
+      "lastChangedBy": {
+        "name": "FEDERICO MARQUEZ",
+        "email": "federmarquezcalle@gmail.com",
+        "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+      },
+      "data": [
+        {
+          "id": "1",
+          "guid": "54fde0e0-440a-4217-81f3-6995254d69f1",
+          "history": [
+            {
+              "affectedNodeId": "#",
+              "changedBy": {
+                "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                "email": "federmarquezcalle@gmail.com",
+                "name": "FEDERICO MARQUEZ"
+              },
+              "changedOn": "2026-07-28T04:59:13.973Z",
+              "docId": "1",
+              "structureAction": "Create"
+            }
+          ]
+        }
+      ],
+      "attributes": {
+      },
+      "templateColumns": {
+      },
+      "views": {
+        "Primary": {
+          "columns": [
+            {
+              "columnId": "id",
+              "width": 65
+            },
+            {
+              "columnId": "description",
+              "width": 500
+            }
+          ],
+          "default": true
+        }
+      },
+      "metadata": {
+        "format": "2.22"
+      }
+    },
+    {
+      "id": "NEEDS",
+      "guid": "589caa18-9358-4a27-b26c-cf448887cae1",
+      "name": "User Needs",
+      "lastId": 24,
+      "createdOn": "2026-07-28T05:00:58.896Z",
+      "createdBy": {
+        "name": "FEDERICO MARQUEZ",
+        "email": "federmarquezcalle@gmail.com",
+        "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+      },
+      "lastChangedOn": "2026-07-28T05:40:44.456Z",
+      "lastChangedBy": {
+        "name": "FEDERICO MARQUEZ",
+        "email": "federmarquezcalle@gmail.com",
+        "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+      },
+      "data": [
+        {
+          "id": "1",
+          "guid": "9371d947-6f89-4784-9568-12caf57294c2",
+          "heading": "Introduction",
+          "instructions": "<p>This document describes needs of product stakeholders as agile <em>user stories</em>. User stories are simple statements formulated according to the following template:</p><p>“<em>As a</em> &lt;type of user&gt;, <em>I want</em> &lt;some goal&gt;, <em>so that</em> &lt;some reason&gt;.”</p><p>For more information see <a href=\"https://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685\">User Stories Applied</a> by Mike Cohn or his <a href=\"https://www.mountaingoatsoftware.com/agile/user-stories\">User Stories</a> web page.</p>",
+          "type": "SEC",
+          "children": [
+            {
+              "id": "7",
+              "guid": "2920957f-4b94-4ba9-8716-f3b5663950c8",
+              "heading": "Registrar y actualizar tripulantes",
+              "acceptanceCriteria": "<ul><li>Dado un tripulante nuevo con todos los datos obligatorios (nombre, identificación, rol, licencia), cuando el administrativo lo guarda, entonces queda disponible en el listado de tripulantes.</li><li>Dado un tripulante existente, cuando se editan sus datos, entonces el sistema actualiza la información y conserva la fecha del último cambio.</li><li>Dado que falta un campo obligatorio, cuando se intenta guardar, entonces el sistema rechaza el registro e indica el campo faltante.</li></ul>",
+              "asAn": "PersonalAdministrativo",
+              "iWant": "<p>registrar y actualizar los datos de los tripulantes (pilotos y copilotos)</p>",
+              "priority": "High",
+              "soThat": "<p>mantener el personal disponible y correctamente identificado en el sistema</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "8",
+              "guid": "c498bdf5-d46b-473d-afa0-c96f434f5090",
+              "heading": "Registrar y actualizar tripulaciones",
+              "acceptanceCriteria": "<ul><li>Dado un piloto y un copiloto activos y certificados, cuando el administrativo los agrupa, entonces el sistema crea la tripulación y la deja disponible para asignación.</li><li>Dado que falta el piloto o el copiloto, cuando se intenta guardar, entonces el sistema no permite crear la tripulación y notifica el requisito faltante.</li></ul>",
+              "asAn": "PersonalAdministrativo",
+              "iWant": "<p>registrar y actualizar tripulaciones (parejas piloto-copiloto)</p>",
+              "priority": "High",
+              "soThat": "<p>tenerlas disponibles al momento de asignarlas a un vuelo</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "9",
+              "guid": "58dc1fd3-c119-4f23-9bee-9d0afc660c65",
+              "heading": "Registrar y actualizar vuelos",
+              "acceptanceCriteria": "<ul><li>Dado un vuelo nuevo, cuando se ingresan fecha, origen, destino, condiciones meteorológicas y visibilidad previstas, entonces el sistema lo guarda y lo hace consultable.</li><li>Dado un vuelo existente, cuando se actualizan sus condiciones previstas, entonces el sistema conserva un registro de la actualización con fecha y hora.</li></ul>",
+              "asAn": "PersonalAdministrativo",
+              "iWant": "<p>registrar y actualizar los datos de cada vuelo (fecha, origen, destino, condiciones meteorológicas y de visibilidad previstas)</p>",
+              "priority": "High",
+              "soThat": "<p>que operadores y tripulación cuenten con información confiable</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "10",
+              "guid": "b9ee8147-5111-4e3b-aeea-b6333b9de3dd",
+              "heading": "Consultar vuelos asignados",
+              "acceptanceCriteria": "<ul><li>Dado un piloto o copiloto autenticado, cuando accede a \"Mis vuelos\", entonces ve únicamente los vuelos donde su tripulación fue asignada, ordenados por fecha.</li><li>Dado que no tiene vuelos asignados en el periodo consultado, entonces el sistema lo indica sin mostrar error.</li></ul>",
+              "asAn": "PilotoCopiloto",
+              "iWant": "<p>consultar mis vuelos asignados</p>",
+              "priority": "High",
+              "soThat": "<p>conocer mi programación</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "11",
+              "guid": "c286150d-4d5c-4516-b34b-4b736eec7584",
+              "heading": "Consultar características de un vuelo",
+              "acceptanceCriteria": "<ul><li>Dado un usuario autenticado, cuando busca un vuelo por fecha, origen o destino, entonces el sistema muestra fecha, origen, destino, condiciones meteorológicas y visibilidad previstas.</li></ul>",
+              "asAn": "MiembroTripulacion",
+              "iWant": "<p>consultar las características de cualquier vuelo</p>",
+              "priority": "High",
+              "soThat": "<p>prepararme adecuadamente</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "12",
+              "guid": "43803af7-3a20-4348-a44f-083f1841a46b",
+              "heading": "Registrar resultado de simulación",
+              "acceptanceCriteria": "<ul><li>Dado un piloto que completó una simulación, cuando se registra el resultado numérico, entonces queda asociado al piloto, al escenario y a la fecha de realización.</li><li>Dado que ya existe un resultado vigente del piloto para ese escenario en el año en curso, cuando se registra uno nuevo, entonces el sistema lo marca como vigente y conserva el anterior en el histórico.</li></ul>",
+              "asAn": "Piloto",
+              "iWant": "<p>que el resultado numérico de mi simulación en un escenario quede registrado en el sistema</p>",
+              "priority": "High",
+              "soThat": "<p>que se use en las decisiones de asignación</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "13",
+              "guid": "21922a1b-fc64-4d29-9a35-5b5a21c6c60f",
+              "heading": "Recomendar tripulación según escenario más aproximado",
+              "acceptanceCriteria": "<ul><li>Dado un vuelo con condiciones meteorológicas y de visibilidad definidas, cuando el operador solicita una recomendación, entonces el sistema identifica el escenario más próximo y lista los pilotos disponibles ordenados por puntuación descendente.</li><li>Dado que ningún piloto disponible tiene puntuación vigente en ese escenario, entonces el sistema lo advierte explícitamente en vez de mostrar una recomendación vacía.</li></ul>",
+              "asAn": "OperadorVuelo",
+              "iWant": "<p>que el sistema identifique el escenario estandarizado más aproximado a un vuelo y me recomiende la tripulación con mayor puntuación en ese escenario</p>",
+              "priority": "High",
+              "soThat": "<p>asignar la tripulación más adecuada</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "14",
+              "guid": "51ad430c-42a8-4dde-9e61-c9e1cc742868",
+              "heading": "Asignar tripulación a un vuelo",
+              "acceptanceCriteria": "<ul><li>Dado que el operador confirma la tripulación recomendada, cuando registra la asignación, entonces el sistema la vincula al vuelo y la marca como asignada.</li><li>Dado que el operador asigna una tripulación distinta a la recomendada, cuando confirma, entonces el sistema exige un motivo y lo guarda junto con la asignación.</li></ul>",
+              "asAn": "OperadorVuelo",
+              "iWant": "<p>asignar la tripulación a un vuelo (confirmando o ajustando la recomendación, con motivo si me aparto de ella)</p>",
+              "priority": "High",
+              "soThat": "<p>dejar formalizada la decisión</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "15",
+              "guid": "514aa2ab-1140-414a-9e31-5f4e8eee1bdc",
+              "heading": "Alertar simulación anual pendiente",
+              "asAn": "Piloto",
+              "iWant": "<p>recibir un aviso cuando se acerque la fecha límite para completar la simulación anual de algún escenario</p>",
+              "priority": "Medium",
+              "soThat": "<p>cumplir con la evaluación obligatoria</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "16",
+              "guid": "a5865d3b-4e31-46b0-8999-ad1945b95dfc",
+              "heading": "Gestionar catálogo de escenarios",
+              "asAn": "AdministradorSistema",
+              "iWant": "<p>gestionar (crear/editar) el catálogo de escenarios estandarizados de simulación</p>",
+              "priority": "Medium",
+              "soThat": "<p>mantenerlo actualizado frente a nuevas condiciones operativas</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "17",
+              "guid": "a2f9bd0f-85f8-4bd0-b3b1-71e6c57bbcf7",
+              "heading": "Reportes históricos de desempeño",
+              "asAn": "OperadorDireccion",
+              "iWant": "<p>generar reportes históricos de desempeño de pilotos por escenario</p>",
+              "priority": "Low",
+              "soThat": "<p>apoyar decisiones y evaluaciones periódicas</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "18",
+              "guid": "50cebad9-7abf-451f-aed9-c2ed3c4d292c",
+              "heading": "Notificación de cambio de asignación",
+              "asAn": "UsuarioSistema",
+              "iWant": "<p>recibir una notificación cuando cambie mi asignación</p>",
+              "priority": "Low",
+              "soThat": "<p>enterarme sin tener que consultar manualmente</p>",
+              "type": "STORY"
+            },
+            {
+              "id": "19",
+              "guid": "fd487dbd-e417-439d-b59f-75e38f68bead",
+              "heading": "Seguridad basada en roles",
+              "acceptanceCriteria": "<ul><li>Dado un usuario con rol piloto, cuando intenta acceder a funciones de administración de datos o de asignación, entonces el sistema deniega el acceso.</li><li>Dado un usuario con rol operador, cuando intenta editar datos personales de un tripulante, entonces el sistema deniega el acceso.</li></ul>",
+              "asAn": "Sistema",
+              "iWant": "<p>restringir funciones y datos según el rol del usuario (piloto, operador, administrativo)</p>",
+              "priority": "High",
+              "soThat": "<p>evitar accesos indebidos a información o funciones que no correspondan a cada rol</p>",
+              "type": "CON"
+            },
+            {
+              "id": "20",
+              "guid": "3fbc8fea-273d-45c8-a080-348ebe57a9e5",
+              "heading": "Auditoría de asignaciones",
+              "acceptanceCriteria": "<ul><li>Dado cualquier cambio en la asignación de una tripulación, cuando se guarda, entonces el sistema registra usuario, fecha/hora y valores anterior y nuevo.</li><li>Dado un usuario con permisos de auditoría, cuando consulta el historial de un vuelo, entonces ve todas las asignaciones y reasignaciones en orden cronológico.</li></ul>",
+              "asAn": "Sistema",
+              "iWant": "<p>registrar usuario, fecha/hora y valores anterior y nuevo de toda asignación o reasignación de tripulación</p>",
+              "priority": "High",
+              "soThat": "<p>sustentar auditorías y el cumplimiento de la seguridad operacional</p>",
+              "type": "CON"
+            },
+            {
+              "id": "21",
+              "guid": "1b587a85-5e5f-4fed-b4d8-b0e87f954b3a",
+              "heading": "Disponibilidad continua",
+              "asAn": "Sistema",
+              "iWant": "<p>estar operativo de forma continua (24/7)</p>",
+              "priority": "Medium",
+              "soThat": "<p>la operación aérea no se detiene y depende del sistema en todo momento</p>",
+              "type": "CON"
+            },
+            {
+              "id": "22",
+              "guid": "8585eb0f-73ba-439b-a20f-751cbf5e1461",
+              "heading": "Rendimiento en consultas",
+              "asAn": "Sistema",
+              "iWant": "<p>responder la consulta de vuelos asignados en menos de 2 segundos en condiciones normales</p>",
+              "priority": "Medium",
+              "soThat": "<p>los usuarios puedan consultar su información sin demoras</p>",
+              "type": "CON"
+            },
+            {
+              "id": "23",
+              "guid": "f41abdc7-31ac-48bd-bd0d-d2ba0035307d",
+              "heading": "Integridad de la sincronización con el simulador",
+              "asAn": "Sistema",
+              "iWant": "<p>validar la sincronización con el simulador y alertar ante fallos o retrasos</p>",
+              "priority": "Medium",
+              "soThat": "<p>la información usada en la asignación sea siempre confiable</p>",
+              "type": "CON"
+            },
+            {
+              "id": "24",
+              "guid": "32b5921b-2927-43c7-8dec-53b376fffaa7",
+              "heading": "Usabilidad móvil",
+              "asAn": "Sistema",
+              "iWant": "<p>permitir consultar vuelos y resultados desde dispositivos móviles</p>",
+              "priority": "Low",
+              "soThat": "<p>los pilotos puedan acceder a su información en cualquier lugar</p>",
+              "type": "CON"
+            },
+            {
+              "id": "2",
+              "guid": "398f9dd5-0d9a-493c-9c86-82f7a5ae278f",
+              "deleted": true,
+              "heading": "Purpose",
+              "instructions": "<p>Identify the product specified in this document.</p>",
+              "type": "SEC",
+              "history": [
+                {
+                  "attributesChanged": {
+                    "deleted": null
+                  },
+                  "changedBy": {
+                    "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                    "email": "federmarquezcalle@gmail.com",
+                    "name": "FEDERICO MARQUEZ"
+                  },
+                  "changedOn": "2026-07-28T05:40:22.185Z"
+                }
+              ]
+            },
+            {
+              "id": "3",
+              "guid": "5ef2d367-8665-45a4-9ab4-7e32a88d5fae",
+              "deleted": true,
+              "heading": "Scope",
+              "instructions": "<p>Briefly describe the scope of the product.</p>",
+              "type": "SEC",
+              "history": [
+                {
+                  "attributesChanged": {
+                    "deleted": null
+                  },
+                  "changedBy": {
+                    "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                    "email": "federmarquezcalle@gmail.com",
+                    "name": "FEDERICO MARQUEZ"
+                  },
+                  "changedOn": "2026-07-28T05:40:25.422Z"
+                },
+                {
+                  "attributesChanged": {
+                    "deleted": true
+                  },
+                  "changedBy": {
+                    "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                    "email": "federmarquezcalle@gmail.com",
+                    "name": "FEDERICO MARQUEZ"
+                  },
+                  "changedOn": "2026-07-28T05:40:35.872Z"
+                },
+                {
+                  "attributesChanged": {
+                    "deleted": null
+                  },
+                  "changedBy": {
+                    "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                    "email": "federmarquezcalle@gmail.com",
+                    "name": "FEDERICO MARQUEZ"
+                  },
+                  "changedOn": "2026-07-28T05:40:37.817Z"
+                }
+              ]
+            },
+            {
+              "id": "4",
+              "guid": "82f78639-b139-4a31-868e-17fb34ce5fa6",
+              "deleted": true,
+              "heading": "User Roles",
+              "instructions": "<p>Identify user roles for the product and for each role describe characteristics of a typical user.</p><p>You may consider creating personas with a real name. Each persona should be described sufficiently that everyone on the team feels like they know the persona.</p>",
+              "type": "SEC",
+              "history": [
+                {
+                  "attributesChanged": {
+                    "deleted": null
+                  },
+                  "changedBy": {
+                    "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                    "email": "federmarquezcalle@gmail.com",
+                    "name": "FEDERICO MARQUEZ"
+                  },
+                  "changedOn": "2026-07-28T05:40:29.252Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "guid": "d7375477-1699-445b-9a4b-2ca87dfce40f",
+          "deleted": true,
+          "heading": "User Stories",
+          "instructions": "<p>Specify user stories describing functionality of the product grouped into <em>epics</em> for easier navigation in the document.</p><p>Set the following attributes for each story:</p><ul><li><em>Heading:</em> short story name,</li><li><em>As a(n):</em> type of user,</li><li><em>I want:</em> some goal,</li><li><em>So that:&nbsp;</em>some reason,</li><li><em>Acceptance Criteria:</em> more details how the story should be verified and providing the basic criteria that can be used to determine if a story is fully implemented,</li><li><em>Priority:</em> “High” for fundamental features, “Medium” for important features having a short-term workaround, “Low” for features which can be left out of the release if time runs out or won't-have for features will be needed in a later release,</li><li><em>Risk:</em> “High”, “Medium”, or “Low”,</li><li><em>Estimation:</em><strong>&nbsp;</strong>story points which are relative estimate of the complexity, effort or duration of a story, and</li><li><em>Status:&nbsp;</em> workflow information classifying stories as “New”, “Planned”, “Implemented” or “Verified”.</li></ul>",
+          "type": "SEC",
+          "history": [
+            {
+              "attributesChanged": {
+                "deleted": null
+              },
+              "changedBy": {
+                "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                "email": "federmarquezcalle@gmail.com",
+                "name": "FEDERICO MARQUEZ"
+              },
+              "changedOn": "2026-07-28T05:40:40.525Z"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "guid": "f3b7db6d-3367-4bf7-a443-c2860732959b",
+          "deleted": true,
+          "heading": "Constraints",
+          "instructions": "<p>Identify constraints addressing non-functional requirements about product performance, accuracy, portability, reusability, maintainability, interoperability, availability, usability, security and capacity.</p><p>Set the following constraint attributes:</p><ul><li><em>Heading:</em> short constraint name</li><li><em>Text:</em> constraint description</li><li><em>Acceptance Criteria:</em> more details how the constraint should be verified and providing the basic criteria that can be used to determine if the constraint is not violated</li></ul><p><br></p>",
+          "type": "SEC",
+          "history": [
+            {
+              "attributesChanged": {
+                "deleted": null
+              },
+              "changedBy": {
+                "company": "UNIVERSIDAD PONTIFICIA BOLIVARIANA",
+                "email": "federmarquezcalle@gmail.com",
+                "name": "FEDERICO MARQUEZ"
+              },
+              "changedOn": "2026-07-28T05:40:44.456Z"
+            }
+          ]
+        }
+      ],
+      "attributes": {
+        "acceptanceCriteria": {
+          "name": "Acceptance Criteria",
+          "type": "xhtml"
+        },
+        "asAn": {
+          "name": "As a(n)",
+          "type": "enum",
+          "values": [
+            {
+              "default": false,
+              "key": "PersonalAdministrativo",
+              "label": "\tPersonal administrativo"
+            },
+            {
+              "default": false,
+              "key": "PilotoCopiloto",
+              "label": "\tPiloto o copiloto"
+            },
+            {
+              "default": false,
+              "key": "Piloto",
+              "label": "\tPiloto"
+            },
+            {
+              "default": false,
+              "key": "MiembroTripulacion",
+              "label": "\tMiembro de tripulación"
+            },
+            {
+              "default": false,
+              "key": "OperadorVuelo",
+              "label": "Operador de vuelo"
+            },
+            {
+              "default": false,
+              "key": "AdministradorSistema",
+              "label": "Administrador del sistema"
+            },
+            {
+              "default": false,
+              "key": "OperadorDireccion",
+              "label": "Operador de vuelo o Dirección"
+            },
+            {
+              "default": false,
+              "key": "UsuarioSistema",
+              "label": "\tUsuario del sistema"
+            },
+            {
+              "default": false,
+              "key": "Sistema",
+              "label": "\tSistema"
+            }
+          ]
+        },
+        "estimation": {
+          "name": "Estimation",
+          "type": "int"
+        },
+        "iWant": {
+          "name": "I want",
+          "type": "xhtml"
+        },
+        "instructions": {
+          "help": true,
+          "type": "xhtml"
+        },
+        "priority": {
+          "name": "Priority",
+          "type": "enum",
+          "values": [
+            {
+              "key": "High"
+            },
+            {
+              "key": "Medium"
+            },
+            {
+              "key": "Low"
+            }
+          ]
+        },
+        "risk": {
+          "name": "Risk",
+          "type": "enum",
+          "values": [
+            {
+              "key": "High"
+            },
+            {
+              "key": "Medium"
+            },
+            {
+              "key": "Low"
+            }
+          ]
+        },
+        "soThat": {
+          "name": "So that",
+          "type": "xhtml"
+        },
+        "status": {
+          "name": "Status",
+          "type": "enum",
+          "values": [
+            {
+              "key": "New"
+            },
+            {
+              "key": "Planned"
+            },
+            {
+              "key": "Implemented"
+            },
+            {
+              "key": "Verified"
+            }
+          ]
+        },
+        "type": {
+          "name": "Type",
+          "type": "enum",
+          "values": [
+            {
+              "key": "SEC",
+              "label": "Section"
+            },
+            {
+              "key": "INF",
+              "label": "Information"
+            },
+            {
+              "key": "EPIC",
+              "label": "Epic"
+            },
+            {
+              "key": "STORY",
+              "label": "User Story"
+            },
+            {
+              "key": "CON",
+              "label": "Constraint"
+            }
+          ]
+        }
+      },
+      "templateColumns": {
+        "8abf4736-2fc8-4bf2-aff0-9a54be32cac0": {
+          "label": "Story",
+          "template": "{{#if (eval (eval type \"==\" \"STORY\") \"||\" (eval type \"==\" \"CON\"))}}\n<p>\n<em>As a(n)</em> {{asAn}} <em>I want to</em> {{formatString iWant}} <em>so that</em> {{formatString soThat}}.\n</p>\n{{/if}}"
+        }
+      },
+      "views": {
+        "Primary": {
+          "columns": [
+            {
+              "columnId": "id",
+              "width": 108
+            },
+            {
+              "columnId": "type",
+              "width": 90
+            },
+            {
+              "columnId": "description",
+              "width": 322
+            },
+            {
+              "columnId": "asAn",
+              "width": 161
+            },
+            {
+              "columnId": "iWant",
+              "width": 268
+            },
+            {
+              "columnId": "soThat",
+              "width": 268
+            },
+            {
+              "columnId": "acceptanceCriteria",
+              "width": 268
+            }
+          ],
+          "default": true
+        }
+      },
+      "metadata": {
+        "format": "2.22"
+      }
+    }
+  ],
+  "attachments": {
+  },
+  "traceability": {
+    "reference": {
+      "name": "Reference",
+      "source": "References",
+      "target": "Referenced by"
+    }
+  },
+  "metadata": {
+    "format": "2.22",
+    "saveHistory": true
+  }
+}

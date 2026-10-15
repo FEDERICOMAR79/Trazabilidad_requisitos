@@ -8,7 +8,7 @@ Lee las fuentes del repositorio y genera, sin editar nada a mano:
   - la auditoría Auditoria_trazabilidad.md.
 
 Fuentes (todas dentro del repositorio):
-  Backlog/Product_backlog_ReqView.csv                    requisitos (HU y RNF) y su prioridad
+  Backlog/Product_backlog.reqw                           requisitos (HU y RNF) y su prioridad (archivo de ReqView)
   U3A2-Prototipado/prototipo/index.html                  código: marcas  @trace HU-xx  sobre cada función
   U3A2-Prototipado/pruebas/resultados_pruebas.json       resultado de cada prueba y el requisito que verifica
   U3A2-Prototipado/trazabilidad/cambios_aprobados.json   decisiones del CCB y artefactos de cada RFC
@@ -23,13 +23,13 @@ Uso (desde la raíz del repositorio, con los cambios ya agregados a git):
   python3 U4A1-Trazabilidad/herramienta.py auditoria   # solo la auditoría
 Requiere: Python 3.9+ y openpyxl (pip install openpyxl).
 """
-import argparse, csv, json, re, subprocess, sys
+import argparse, json, re, subprocess, sys
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent          # U4A1-Trazabilidad
 RAIZ = AQUI.parent                               # raíz del repositorio
 U3A2 = RAIZ / "U3A2-Prototipado"
-BACKLOG = RAIZ / "Backlog" / "Product_backlog_ReqView.csv"
+BACKLOG = RAIZ / "Backlog" / "Product_backlog.reqw"
 PROTOTIPO = U3A2 / "prototipo" / "index.html"
 RESULTADOS = U3A2 / "pruebas" / "resultados_pruebas.json"
 CAMBIOS = U3A2 / "trazabilidad" / "cambios_aprobados.json"
@@ -45,17 +45,29 @@ def _json(ruta):
 
 
 # ---------------------------------------------------------------- lectura de fuentes
+def nodos_reqw(lista):
+    """Recorre los nodos de un documento ReqView en orden, sin los eliminados."""
+    for n in lista:
+        if n.get("deleted"):
+            continue
+        yield n
+        yield from nodos_reqw(n.get("children", []))
+
+
 def cargar_backlog():
+    """Lee el backlog desde el archivo de ReqView (.reqw). HU = historias, RNF = restricciones, en orden de documento."""
+    doc = next(x for x in _json(BACKLOG)["documents"] if x["id"] == "NEEDS")
     reqs, n_hu, n_rnf = {}, 0, 0
-    with open(BACKLOG, encoding="utf-8-sig") as f:
-        for r in csv.DictReader(f):
-            if r["type"] == "User Story":
-                n_hu += 1; k = "HU-%02d" % n_hu
-            else:
-                n_rnf += 1; k = "RNF-%02d" % n_rnf
-            reqs[k] = dict(id=k, titulo=r["heading"], tipo="Funcional" if k.startswith("HU") else "Restricción",
-                           actor=r["asAn"], prioridad=PRIO.get(r["priority"], r["priority"]),
-                           criterios=len(re.findall(r"<li>", r["acceptanceCriteria"])))
+    for r in nodos_reqw(doc["data"]):
+        if r.get("type") not in ("STORY", "CON"):
+            continue
+        if r["type"] == "STORY":
+            n_hu += 1; k = "HU-%02d" % n_hu
+        else:
+            n_rnf += 1; k = "RNF-%02d" % n_rnf
+        reqs[k] = dict(id=k, titulo=r["heading"], tipo="Funcional" if k.startswith("HU") else "Restricción",
+                       actor=r["asAn"], prioridad=PRIO.get(r["priority"], r["priority"]),
+                       criterios=len(re.findall(r"<li>", r.get("acceptanceCriteria", ""))))
     return reqs
 
 
@@ -315,7 +327,7 @@ def cmd_matriz(m, h=None):
     ws = wb.active; ws.title = "Instrucciones"
     txt = ["MATRIZ DE TRAZABILIDAD DE REQUISITOS — Proyecto Tripulaciones (TRI-MTZ-007)",
            "Generada automáticamente por U4A1-Trazabilidad/herramienta.py. No se edita a mano: se cambian las fuentes y se vuelve a generar.", "",
-           "Fuentes: backlog (Backlog/Product_backlog_ReqView.csv), código (marcas @trace en U3A2-Prototipado/prototipo/index.html), pruebas (U3A2-Prototipado/pruebas/resultados_pruebas.json),",
+           "Fuentes: backlog (Backlog/Product_backlog.reqw), código (marcas @trace en U3A2-Prototipado/prototipo/index.html), pruebas (U3A2-Prototipado/pruebas/resultados_pruebas.json),",
            "necesidades (trazabilidad/necesidades.json), decisiones del CCB (trazabilidad/cambios_aprobados.json) y catálogo (trazabilidad/catalogo_artefactos.json).", "",
            "Hojas: Matriz principal · Trazabilidad visual (requisito × artefacto) · Resumen y métricas · Registro de RFCs · Catálogo de artefactos · Auditoría.", "",
            "Estados: Verificado = tiene código y todas sus pruebas pasan · Implementado = tiene código sin pruebas · Aprobado = está en el backlog, sin construir en el prototipo.",

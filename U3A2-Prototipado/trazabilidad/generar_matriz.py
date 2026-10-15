@@ -4,7 +4,7 @@
 
 Entradas (relativas a este archivo):
   cambios_aprobados.json   decisiones del CCB y artefactos de cada RFC aprobada
-  ../../Backlog/Product_backlog_ReqView.csv   backlog: valida que cada HU/RNF exista
+  ../../Backlog/Product_backlog.reqw   backlog: valida que cada HU/RNF exista
   ../prototipo/index.html  código del prototipo: se leen las marcas  @trace HU-xx
 
 Salidas: Matriz_trazabilidad.csv y Matriz_trazabilidad.md
@@ -15,18 +15,26 @@ from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parent                # carpeta U3A2-Prototipado
-BACKLOG = RAIZ.parent / "Backlog" / "Product_backlog_ReqView.csv"
+BACKLOG = RAIZ.parent / "Backlog" / "Product_backlog.reqw"
+
+
+def _nodos(lista):
+    for n in lista:
+        if n.get("deleted"):
+            continue
+        yield n
+        yield from _nodos(n.get("children", []))
 
 
 def cargar_backlog():
+    """Lee el backlog del archivo de ReqView (.reqw): {HU-xx / RNF-xx: título}."""
+    doc = next(x for x in json.loads(BACKLOG.read_text(encoding="utf-8"))["documents"] if x["id"] == "NEEDS")
     ids, n_hu, n_rnf = {}, 0, 0
-    with open(BACKLOG, encoding="utf-8-sig") as f:
-        for r in csv.DictReader(f):
-            if r["type"] == "User Story":
-                n_hu += 1; k = "HU-%02d" % n_hu
-            else:
-                n_rnf += 1; k = "RNF-%02d" % n_rnf
-            ids[k] = r["heading"]
+    for r in _nodos(doc["data"]):
+        if r.get("type") == "STORY":
+            n_hu += 1; ids["HU-%02d" % n_hu] = r["heading"]
+        elif r.get("type") == "CON":
+            n_rnf += 1; ids["RNF-%02d" % n_rnf] = r["heading"]
     return ids
 
 
