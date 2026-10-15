@@ -1,0 +1,107 @@
+{
+ "fuente": "Necesidades del Vision Board del caso Tripulaciones. El Vision Board propio no está en este repositorio; se transcriben aquí (resumidas) las cinco necesidades del Vision Board publicado en la rama tripulaciones del repositorio de referencia. La relación necesidad → requisito es análisis del autor.",
+ "necesidades": [
+  {
+   "id": "NEG-01",
+   "texto": "Los pilotos necesitan conocer sus resultados de simulación para dar seguimiento a su desempeño.",
+   "requisitos": [
+    "HU-06",
+    "HU-11",
+    "HU-09"
+   ]
+  },
+  {
+   "id": "NEG-02",
+   "texto": "El personal administrativo necesita registrar y actualizar la información de forma sencilla y confiable.",
+   "requisitos": [
+    "HU-01",
+    "HU-02",
+    "HU-03",
+    "HU-06",
+    "HU-10",
+    "RNF-06"
+   ]
+  },
+  {
+   "id": "NEG-03",
+   "texto": "La asignación debe basarse en criterios objetivos y no en decisiones manuales.",
+   "requisitos": [
+    "HU-07",
+    "HU-08",
+    "RNF-02"
+   ]
+  },
+  {
+   "id": "NEG-04",
+   "texto": "La información de pilotos, tripulaciones, vuelos y simulaciones se debe centralizar y consultar según el perfil de cada usuario.",
+   "requisitos": [
+    "HU-01",
+    "HU-02",
+    "HU-03",
+    "HU-04",
+    "HU-05",
+    "HU-12",
+    "RNF-01",
+    "RNF-03",
+    "RNF-04"
+   ]
+  },
+  {
+   "id": "NEG-05",
+   "texto": "Se necesita integración con el simulador para sincronizar escenarios y evaluaciones de forma confiable y oportuna.",
+   "requisitos": [
+    "RNF-05",
+    "HU-06",
+    "HU-10"
+   ]
+  }
+ ],
+ "fuera_de_alcance_prototipo": {
+  "HU-01": "Registro administrativo; no cambia la decisión de asignación que valida el prototipo (U3A2, sección 7.1).",
+  "HU-02": "Registro administrativo; fuera del alcance del prototipo (U3A2, sección 7.1).",
+  "HU-03": "Registro administrativo; fuera del alcance del prototipo (U3A2, sección 7.1).",
+  "HU-09": "Alerta de simulación anual; requiere calendario y notificaciones (RFC-A3, CCB 13/10/2026).",
+  "HU-10": "Gestión del catálogo; el prototipo trae escenarios fijos.",
+  "HU-11": "Reportes históricos; dependen del histórico de RFC-B1.",
+  "HU-12": "Notificaciones; dependen de RFC-A2 (Sprint 5).",
+  "RNF-03": "Disponibilidad 24/7; no medible en un prototipo local.",
+  "RNF-04": "Rendimiento; sin backend no hay tiempos reales que medir.",
+  "RNF-05": "Sincronización con el simulador; el simulador es externo y el prototipo no se conecta."
+ },
+ "notas_requisitos": {
+  "RNF-01": "Parcial: rol simulado con selector; sin inicio de sesión real.",
+  "RNF-02": "Parcial: el historial registra vuelo, tripulación, motivo y fecha; falta usuario autenticado y valor anterior.",
+  "RNF-06": "Cumple en 375 px de ancho (DEF-02 corregido).",
+  "HU-06": "El resultado anterior se conserva en el historial (criterio del backlog); el caso de estudio dice que se elimina. Resuelto en RFC-B1.",
+  "HU-07": "DEF-01 y DEF-07 abiertos (empate y falta de explicación)."
+ },
+ "hallazgos_manuales": [
+  {
+   "id": "M-01",
+   "tipo": "Contradicción entre fuentes",
+   "detalle": "El caso de estudio dice que el resultado nuevo elimina el anterior; el criterio de aceptación de HU-06 lo conserva en el historial. RFC-B1 adopta la versión con historial.",
+   "severidad": "Medio",
+   "estado": "Cerrado",
+   "responsable": "Analista de requisitos",
+   "accion": "Resuelto en RFC-B1 (U3A1) y verificado en la prueba P22."
+  },
+  {
+   "id": "M-02",
+   "tipo": "Artefacto ausente",
+   "detalle": "El Vision Board (fuente de las necesidades NEG-01 a NEG-05) no está en el repositorio propio.",
+   "severidad": "Medio",
+   "estado": "Abierto",
+   "responsable": "Autor",
+   "accion": "Agregar el Vision Board como artefacto TRI-VIS y enlazarlo desde las necesidades."
+  },
+  {
+   "id": "M-03",
+   "tipo": "Backlog desactualizado",
+   "detalle": "El backlog (v1.0) no refleja las decisiones del CCB del 13/10/2026 (por ejemplo, el promedio de 3 simulaciones de RFC-B1 y el motivo obligatorio de RFC-A3).",
+   "severidad": "Medio",
+   "estado": "Abierto",
+   "responsable": "Analista de requisitos",
+   "accion": "Publicar backlog v1.1 con los criterios de aceptación de las RFC aprobadas."
+  }
+ ]
+}
