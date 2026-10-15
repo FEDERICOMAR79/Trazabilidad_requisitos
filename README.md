@@ -4,10 +4,21 @@ Rama `tripulaciones` del repositorio de trazabilidad de requisitos. El índice g
 
 ## Versiones actuales
 
-| ID | Artefacto | Tipo | Versión | Estado final | Autor | Fecha de cierre |
-| --- | --- | --- | --- | --- | --- | --- |
-| TRI-PBL-001 | [Product_backlog.html](Product_backlog.html) · fuente [Product_backlog_ReqView.csv](Product_backlog_ReqView.csv) | Product Backlog (18 ítems) | 1.0 | Entregado para revisión, 1 iteración | Federico Márquez | 13/10/2026 |
-| TRI-RFC-002 | [RFC_Solicitudes_de_Cambio.pdf](RFC_Solicitudes_de_Cambio.pdf) · editable [RFC_Solicitudes_de_Cambio.docx](RFC_Solicitudes_de_Cambio.docx) | Solicitudes de cambio (RFC) | 1.0 | Entregado para revisión, 1 iteración | Federico Márquez | 13/10/2026 |
+Cada artefacto lleva sus metadatos: ID único, versión, estado final, autor o revisor, fecha de cierre y artefactos relacionados. La tabla se genera con `python3 U4A1-Trazabilidad/herramienta.py catalogo` a partir de [U4A1-Trazabilidad/catalogo_artefactos.json](U4A1-Trazabilidad/catalogo_artefactos.json); no se edita a mano.
+
+<!-- METADATOS:INICIO -->
+| ID | Artefacto | Tipo | Versión | Estado final | Autor o revisor | Fecha de cierre | Artefactos relacionados |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| TRI-PBL-001 | [Product_backlog.html](Backlog/Product_backlog.html) · [Product_backlog_ReqView.csv](Backlog/Product_backlog_ReqView.csv) | Product Backlog (18 ítems) | 1.0 | Aprobado, 1 iteración | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-RFC-002, TRI-PRO-003, TRI-MTZ-007 |
+| TRI-RFC-002 | [RFC_Solicitudes_de_Cambio.pdf](U3A1-RFC/RFC_Solicitudes_de_Cambio.pdf) · [RFC_Solicitudes_de_Cambio.docx](U3A1-RFC/RFC_Solicitudes_de_Cambio.docx) | RFC (10 solicitudes) | 1.0 | Entregado, 1 iteración. Decisiones tomadas en TRI-CCB-006 | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-PBL-001, TRI-CCB-006, TRI-DOC-005 |
+| TRI-PRO-003 | [index.html](U3A2-Prototipado/prototipo/index.html) | Prototipo (HTML) | 0.2 | Validado con 30 pruebas automáticas; 7 defectos abiertos (DEF-01, DEF-06 a DEF-11) | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-PBL-001, TRI-PRU-004, TRI-DOC-005, TRI-MTZ-007 |
+| TRI-PRU-004 | [test_prototipo.py](U3A2-Prototipado/pruebas/test_prototipo.py) · [resultados_pruebas.json](U3A2-Prototipado/pruebas/resultados_pruebas.json) (+5) | Casos de prueba automatizados | 1.0 | 30 de 30 aprobadas | Federico Márquez (autor); revisor: Pendiente (docente) | 14/10/2026 | TRI-PRO-003, TRI-PBL-001, TRI-MTZ-007 |
+| TRI-DOC-005 | [U3A2_Prototipado_CCB_Federico_Marquez.pdf](U3A2-Prototipado/U3A2_Prototipado_CCB_Federico_Marquez.pdf) · [U3A2_Prototipado_CCB_Federico_Marquez.docx](U3A2-Prototipado/U3A2_Prototipado_CCB_Federico_Marquez.docx) | Informe | 1.0 | Entregado, 1 iteración | Federico Márquez (autor); revisor: Pendiente (docente) | 14/10/2026 | TRI-PRO-003, TRI-PRU-004, TRI-CCB-006, TRI-RFC-002 |
+| TRI-CCB-006 | [cambios_aprobados.json](U3A2-Prototipado/trazabilidad/cambios_aprobados.json) | Acta del CCB (datos) | 1.0 | Reunión simulada del 13/10/2026; 6 RFC aprobadas, 4 sin aprobar | Federico Márquez (autor); revisor: Pendiente (docente) | 13/10/2026 | TRI-RFC-002, TRI-DOC-005, TRI-MTZ-007 |
+| TRI-MTZ-007 | [Matriz_trazabilidad.xlsx](U4A1-Trazabilidad/Matriz_trazabilidad.xlsx) · [Matriz_trazabilidad.md](U3A2-Prototipado/trazabilidad/Matriz_trazabilidad.md) (+1) | Matriz de trazabilidad (generada) | 1.0 | Generada por script; auditada en TRI-AUD-008 | Federico Márquez (autor); revisor: Pendiente (docente) | 15/10/2026 | TRI-PBL-001, TRI-PRO-003, TRI-PRU-004, TRI-CCB-006, TRI-AUD-008, TRI-SCR-009 |
+| TRI-AUD-008 | [Auditoria_trazabilidad.md](U4A1-Trazabilidad/Auditoria_trazabilidad.md) · [U4A1_Trazabilidad_Federico_Marquez.pdf](U4A1-Trazabilidad/U4A1_Trazabilidad_Federico_Marquez.pdf) (+1) | Informe de auditoría (generado) | 1.0 | Realizada; hallazgos abiertos con responsable | Federico Márquez (autor); revisor: Pendiente (docente) | 15/10/2026 | TRI-MTZ-007, TRI-SCR-009, TRI-PBL-001 |
+| TRI-SCR-009 | [herramienta.py](U4A1-Trazabilidad/herramienta.py) · [generar_matriz.py](U3A2-Prototipado/trazabilidad/generar_matriz.py) (+2) | Script (Python) | 1.0 | Operativa | Federico Márquez (autor); revisor: Pendiente (docente) | 15/10/2026 | TRI-MTZ-007, TRI-AUD-008, TRI-CCB-006 |
+<!-- METADATOS:FIN -->
 
 ## 1. Contexto del proyecto
 
@@ -39,7 +50,7 @@ Las necesidades salen de las historias de usuario del backlog. Cada fila indica 
 
 ## 3. Requisitos priorizados
 
-Backlog de 18 ítems: 10 con prioridad alta, 5 media y 3 baja. Los IDs siguen el orden de la exportación de ReqView. El detalle y los criterios de aceptación están en [Product_backlog.html](Product_backlog.html).
+Backlog de 18 ítems: 10 con prioridad alta, 5 media y 3 baja. Los IDs siguen el orden de la exportación de ReqView. El detalle y los criterios de aceptación están en [Product_backlog.html](Backlog/Product_backlog.html).
 
 **Historias de usuario**
 
@@ -100,19 +111,40 @@ Cada escenario del documento «Casos de Estudio: Escenarios de Cambio» (Academi
 
 ## 6. Gestión de cambios
 
-Solicitudes registradas en TRI-RFC-002:
+Solicitudes registradas en TRI-RFC-002 y decididas por el comité de control de cambios (CCB) el 13/10/2026. La reunión fue una simulación en la que el autor asumió los cinco roles; el acta está en [U3A2-Prototipado/U3A2_Prototipado_CCB_Federico_Marquez.pdf](U3A2-Prototipado/U3A2_Prototipado_CCB_Federico_Marquez.pdf) y los datos en [U3A2-Prototipado/trazabilidad/cambios_aprobados.json](U3A2-Prototipado/trazabilidad/cambios_aprobados.json).
 
-| RFC | Título | Solicitante | Tipo | Prioridad | Decisión / estado |
+| RFC | Título | Solicitante | Tipo | Prioridad | Decisión del CCB (votos a favor-en contra-abst.) |
 | --- | --- | --- | --- | --- | --- |
-| RFC-A1 | Alerta de clima extremo en la comparación de escenarios | Cap. Ricardo Méndez | Mejora funcional | Alta | Sin decisión registrada |
-| RFC-A2 | Notificación automática de la asignación por Teams y correo | Gerencia de Gestión Operativa | Mejora funcional | Media | Sin decisión registrada |
-| RFC-A3 | Bloquear la asignación de pilotos no aptos a vuelos críticos | Dirección de Seguridad Operacional | Corrección de defecto | Crítica | Sin decisión registrada |
-| RFC-B1 | Puntuación por promedio de las últimas 3 simulaciones | Ing. Sofía Valdés | Mejora funcional | Alta | Sin decisión registrada |
-| RFC-B2 | Fórmula híbrida 70 % simulación y 30 % horas reales | Dirección de Entrenamiento | Mejora funcional | Media | Esfuerzo estimado 54 h (L) |
-| RFC-B3 | Eliminar la validación manual del operador | Jefatura de Operaciones de Vuelo | Otro: cambio de proceso | Media | Riesgos analizados; se recomienda mantener la validación por excepción |
-| RFC-C1 | IA predictiva de escenarios | Transformación Digital | Cambio de arquitectura | Baja | Rechazada (justificación del Tech Lead) |
-| RFC-C2 | Alineación con NAC-2026: certificación por estabilidad | Autoridad de Aviación Civil | Cambio regulatorio | Alta | Plan de 9 pasos en los sprints 4 a 6 |
-| RFC-C3 | Mejora de la interfaz de consulta | Experiencia de Usuario | Mejora funcional | Media | Aplazada (propuesta del analista) |
-| RFC-C4 | Más frecuencia de simulaciones | Dirección de Entrenamiento | Cambio de proceso | Alta | Priorizada (propuesta del analista) |
+| RFC-A1 | Alerta de clima extremo en la comparación de escenarios | Cap. Ricardo Méndez | Mejora funcional | Alta | Aprobada (5-0-0), Sprint 4 |
+| RFC-A2 | Notificación automática de la asignación por Teams y correo | Gerencia de Gestión Operativa | Mejora funcional | Media | Aprobada con condiciones (4-0-1), Sprint 5 |
+| RFC-A3 | Bloquear la asignación de pilotos no aptos a vuelos críticos | Dirección de Seguridad Operacional | Corrección de defecto | Crítica | Aprobada, extraordinaria hasta el 16/10/2026 (5-0-0) |
+| RFC-B1 | Puntuación por promedio de las últimas 3 simulaciones | Ing. Sofía Valdés | Mejora funcional | Alta | Aprobada en paquete con C2 (5-0-0), Sprints 4 a 6 |
+| RFC-B2 | Fórmula híbrida 70 % simulación y 30 % horas reales | Dirección de Entrenamiento | Mejora funcional | Media | Aplazada (2-2-1): faltan las horas por piloto |
+| RFC-B3 | Eliminar la validación manual del operador | Jefatura de Operaciones de Vuelo | Otro: cambio de proceso | Media | Rechazada (1-4-0) |
+| RFC-C1 | IA predictiva de escenarios | Transformación Digital | Cambio de arquitectura | Baja | Rechazada (0-4-1) |
+| RFC-C2 | Alineación con NAC-2026: certificación por estabilidad | Autoridad de Aviación Civil | Cambio regulatorio | Alta | Aprobada en paquete con B1 (5-0-0), Sprints 4 a 6 |
+| RFC-C3 | Mejora de la interfaz de consulta | Experiencia de Usuario | Mejora funcional | Media | Aplazada: se prioriza C4 (3-2) |
+| RFC-C4 | Más frecuencia de simulaciones | Dirección de Entrenamiento | Cambio de proceso | Alta | Aprobada (prioridad sobre C3), Sprint 4 |
 
-Las decisiones marcadas como propuesta las toma el comité de control de cambios (CCB). Aquí solo está registrado el voto del analista.
+## 7. Entregas por tarea
+
+Cada tarea del curso tiene su carpeta. Los artefactos de una tarea están dentro de ella.
+
+| Carpeta | Tarea | Contenido |
+| --- | --- | --- |
+| [Backlog/](Backlog/) | Product Backlog | Backlog de 18 ítems en HTML y en CSV de ReqView |
+| [U3A1-RFC/](U3A1-RFC/) | U3A1 · Solicitudes de cambio (RFC) | Las 10 RFC en PDF y Word |
+| [U3A2-Prototipado/](U3A2-Prototipado/) | U3A2 · Prototipado y CCB | Informe, `prototipo/` (baja fidelidad, HU-04 a HU-08, RNF-01, RNF-02 y RNF-06), `pruebas/` (30 de 30 aprobadas, resultados y capturas) y `trazabilidad/` (decisiones del CCB y matriz de los cambios aprobados) |
+| [U4A1-Trazabilidad/](U4A1-Trazabilidad/) | U4A1 · Trazabilidad de un requisito | Informe, herramienta, catálogo de metadatos, matriz en Excel y auditoría |
+
+La prueba con usuarios del informe U3A2 es una simulación con personas ficticias. El CCB también fue una simulación.
+
+## 8. Trazabilidad y auditoría
+
+La cadena **necesidad → requisito → prueba → código → resultado** se genera con un script, sin editar nada a mano:
+
+```
+python3 U4A1-Trazabilidad/herramienta.py todo
+```
+
+El script lee las marcas `@trace HU-xx` del código del prototipo, el backlog, los resultados de las pruebas y git. Produce [Matriz_trazabilidad.xlsx](U4A1-Trazabilidad/Matriz_trazabilidad.xlsx) y [Auditoria_trazabilidad.md](U4A1-Trazabilidad/Auditoria_trazabilidad.md). Requiere Python 3.9+ y `openpyxl`. Se ejecuta desde la raíz del repositorio, con los cambios ya agregados a git.
