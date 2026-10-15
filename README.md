@@ -29,7 +29,7 @@ Dentro de la rama, los archivos van en **una carpeta por tarea**. En `tripulacio
 
 | Carpeta | Tarea | Qué hay dentro |
 | --- | --- | --- |
-| `Backlog/` | Product Backlog | Backlog de 18 ítems (HTML y CSV de ReqView) |
+| `Backlog/` | Product Backlog | Backlog de 18 ítems (archivo `.reqw` de ReqView y vista HTML) |
 | `U3A1-RFC/` | U3A1 · Solicitudes de cambio | Las 10 RFC (PDF y Word) |
 | `U3A2-Prototipado/` | U3A2 · Prototipado y CCB | Informe, prototipo, pruebas automáticas y acta y matriz del CCB |
 | `U4A1-Trazabilidad/` | U4A1 · Trazabilidad de un requisito | Informe, herramienta, catálogo de metadatos, matriz en Excel y auditoría |
